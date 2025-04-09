@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+// using Duende.Bff; // <-- add this line for BFF + Par support in net8.0
 using Duende.IdentityModel.Client;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Extensions.Logging;
@@ -13,6 +14,7 @@ using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 namespace Client;
 
+// public class ParOidcEvents(HttpClient httpClient, IDiscoveryCache discoveryCache, ILogger<ParOidcEvents> logger) : BffOpenIdConnectEvents(logger) // <-- replace the line below with this line for BFF + Par support in net8.0 
 public class ParOidcEvents(HttpClient httpClient, IDiscoveryCache discoveryCache, ILogger<ParOidcEvents> logger) : OpenIdConnectEvents
 {
     private readonly HttpClient _httpClient = httpClient;
